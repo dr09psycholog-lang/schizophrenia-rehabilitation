@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Шизофрения и реабилитация</title>
+<style>
+:root {
+  --vk-blue: #2787F5;
+  --vk-blue-hover: #1976E3;
+  --vk-text-primary: #000000;
+  --vk-text-secondary: #818c99;
+  --vk-background: #ffffff;
+  --vk-background-content: #f5f5f5;
+  --vk-separator: #e7e8ec;
+  --vk-button-primary: #2787F5;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--vk-background-content);
+  color: var(--vk-text-primary);
+  line-height: 1.5;
+}
+.vk-container { max-width: 680px; margin: 0 auto; background-color: var(--vk-background); }
+.header {
+  background: linear-gradient(135deg, #2787F5 0%, #5fa3ff 100%);
+  padding: 32px 20px;
+  text-align: center;
+  color: white;
+}
+.header-icon {
+  width: 88px; height: 88px;
+  margin: 0 auto 16px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background: #1565C0;
+  display: flex; align-items: center; justify-content: center;
+}
+.header-icon:hover { transform: scale(1.05); }
+.header-icon span { font-size: 36px; font-weight: 700; color: white; }
+.header h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+.header-subtitle { font-size: 15px; opacity: 0.9; }
+.content { padding: 20px; }
+.section {
+  background: var(--vk-background);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.section-title { font-size: 17px; font-weight: 600; margin-bottom: 12px; color: var(--vk-text-primary); }
+.section-text { font-size: 15px; color: var(--vk-text-primary); line-height: 1.6; margin-bottom: 12px; }
+.info-card {
+  background: #f9fafb;
+  border-left: 3px solid var(--vk-blue);
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 4px;
+}
+.info-card-title { font-size: 14px; font-weight: 600; color: var(--vk-blue); margin-bottom: 6px; }
+.info-card-text { font-size: 14px; color: var(--vk-text-secondary); line-height: 1.5; }
+.symptoms-list { list-style: none; padding: 0; }
+.symptoms-list li { padding: 10px 0; border-bottom: 1px solid var(--vk-separator); font-size: 15px; }
+.symptoms-list li:last-child { border-bottom: none; }
+.symptoms-list li::before { content: '•'; color: var(--vk-blue); font-weight: bold; display: inline-block; width: 20px; font-size: 18px; }
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: #e8f3ff;
+  color: var(--vk-blue);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+.stat-card { background: #f9fafb; padding: 16px; border-radius: 8px; text-align: center; }
+.stat-number { font-size: 24px; font-weight: 700; color: var(--vk-blue); margin-bottom: 4px; }
+.stat-label { font-size: 13px; color: var(--vk-text-secondary); }
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  background-color: var(--vk-button-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  margin-top: 20px;
+}
+.btn-primary:hover { background-color: var(--vk-blue-hover); }
+.btn-secondary {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: var(--vk-background-content);
+  color: var(--vk-blue);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  margin-top: 8px;
+}
+.btn-secondary:hover { background-color: #e8e8e8; }
+.footer { padding: 20px; text-align: center; color: var(--vk-text-secondary); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="vk-container">
+  <div class="header">
+    <div class="header-icon" onclick="launchApp()">
+      <span>Sz</span>
+    </div>
+    <h1>Шизофрения и Реабилитация</h1>
+    <p class="header-subtitle">Информация о заболевании и пути восстановления</p>
+  </div>
+
+  <div class="content">
+    <div class="section">
+      <h2 class="section-title">Что такое шизофрения?</h2>
+      <p class="section-text">Шизофрения — это хроническое психическое расстройство, которое влияет на мышление, восприятие, эмоции и поведение человека. Заболевание относится к группе эндогенных психозов и характеризуется нарушением процессов восприятия реальности.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">1%</div>
+          <div class="stat-label">населения страдает</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">18–25</div>
+          <div class="stat-label">лет типичный дебют</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Основные симптомы</h2>
+      <span class="badge">Позитивные симптомы</span>
+      <span class="badge">Негативные симптомы</span>
+      <span class="badge">Когнитивные нарушения</span>
+      <ul class="symptoms-list">
+        <li>Галлюцинации (чаще всего слуховые)</li>
+        <li>Бред и бредовые идеи</li>
+        <li>Дезорганизованное мышление и речь</li>
+        <li>Эмоциональная уплощённость</li>
+        <li>Социальная изоляция и абулия</li>
+        <li>Нарушения внимания и памяти</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Подходы к реабилитации</h2>
+      <p class="section-text">Современная реабилитация при шизофрении включает комплексный подход, сочетающий медикаментозное лечение и психосоциальные методы.</p>
+      <div class="info-card">
+        <div class="info-card-title">Фармакотерапия</div>
+        <div class="info-card-text">Антипсихотические препараты I и II поколений являются основой лечения. Правильно подобранная терапия снижает частоту рецидивов.</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Психосоциальная реабилитация</div>
+        <div class="info-card-text">Тренинг социальных навыков, когнитивно-поведенческая терапия, трудовая реабилитация и поддержка семьи.</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Когнитивная реабилитация</div>
+        <div class="info-card-text">Специальные программы для восстановления внимания, памяти и исполнительных функций.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Прогноз и восстановление</h2>
+      <p class="section-text">При комплексной терапии 25–30% пациентов достигают устойчивой ремиссии. Раннее начало лечения значительно улучшает прогноз.</p>
+      <p class="section-text">Современные методы реабилитации позволяют большинству пациентов вести полноценную жизнь, сохранять социальные связи и трудоспособность. Поддержка близких играет ключевую роль.</p>
+      <a href="https://dr09psycholog-lang.github.io/schizophrenia-rehabilitation/" class="btn-primary">Программа реабилитации</a>
+      <a href="https://vk.com/club171730919" class="btn-secondary">Перейти в сообщество</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Информация носит образовательный характер</p>
+    <p>&copy; 2026 Sz Rehab</p>
+  </div>
+</div>
+
+<script>
+function launchApp() {
+  const iconElement = document.querySelector('.header-icon');
+  iconElement.style.transform = 'scale(0.95)';
+  setTimeout(() => { iconElement.style.transform = 'scale(1)'; }, 150);
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach((section, index) => {
+    section.style.opacity = 0;
+    section.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      section.style.opacity = 1;
+      section.style.transform = 'translateY(0)';
+    }, index * 100);
+  });
+});
+</script>
+</body>
+</html>
